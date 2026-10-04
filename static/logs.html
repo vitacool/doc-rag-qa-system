@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>问答日志与反馈</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">QA Logs</p>
+        <h1>问答日志与反馈</h1>
+      </div>
+      <nav>
+        <a href="/">问答</a>
+        <a href="/admin">知识库</a>
+        <a href="/logs">日志</a>
+      </nav>
+    </header>
+
+    <main class="single">
+      <section class="panel">
+        <div class="panel-title">
+          <h2>最近问答</h2>
+          <button id="refresh" type="button">刷新</button>
+        </div>
+        <div id="logs" class="log-list"></div>
+      </section>
+    </main>
+
+    <script src="/static/logs.js"></script>
+  </body>
+</html>

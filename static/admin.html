@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>知识库管理</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Knowledge Base Admin</p>
+        <h1>知识库管理</h1>
+      </div>
+      <nav>
+        <a href="/">问答</a>
+        <a href="/admin">知识库</a>
+        <a href="/logs">日志</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <div class="panel-title">
+          <h2>新增文档</h2>
+          <button id="fill-sample" type="button">填充样例</button>
+        </div>
+
+        <label for="title">文档标题</label>
+        <input id="title" type="text" placeholder="例如：校园智能服务说明" />
+
+        <label for="content">文档内容</label>
+        <textarea id="content" placeholder="粘贴 Markdown、TXT 或业务说明文档内容"></textarea>
+
+        <button id="save-text" class="primary" type="button">保存并构建索引</button>
+
+        <div class="divider"></div>
+
+        <h3>上传文件</h3>
+        <input id="file-title" type="text" placeholder="可选：自定义文档标题" />
+        <input id="file" type="file" accept=".txt,.md,.csv,.json,.pdf" />
+        <button id="upload" type="button">上传并构建索引</button>
+        <p class="hint">支持 TXT、Markdown、CSV、JSON、PDF。PDF 解析依赖 pypdf。</p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>文档列表</h2>
+          <button id="refresh" type="button">刷新</button>
+        </div>
+        <div id="documents" class="document-list"></div>
+      </section>
+    </main>
+
+    <script src="/static/admin.js"></script>
+  </body>
+</html>

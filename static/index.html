@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI 知识库文档问答系统</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Document RAG QA</p>
+        <h1>AI 知识库文档问答系统</h1>
+      </div>
+      <nav>
+        <a href="/">问答</a>
+        <a href="/admin">知识库</a>
+        <a href="/logs">日志</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="panel">
+        <div class="panel-title">
+          <h2>知识库问答</h2>
+          <button id="fill-demo" type="button">示例问题</button>
+        </div>
+        <label for="question">问题</label>
+        <textarea id="question" placeholder="例如：宿舍报修流程是什么？这个系统支持哪些反馈闭环？"></textarea>
+        <div class="row">
+          <label for="top-k">检索数量</label>
+          <input id="top-k" type="number" min="1" max="10" value="5" />
+        </div>
+        <button id="ask" class="primary" type="button">检索并生成答案</button>
+      </section>
+
+      <section class="panel">
+        <div class="panel-title">
+          <h2>回答结果</h2>
+          <span id="status">等待提问</span>
+        </div>
+        <div class="answer-box">
+          <div class="score-card">
+            <strong id="confidence">--</strong>
+            <span>最高相似度</span>
+          </div>
+          <pre id="answer">请先在左侧输入问题。</pre>
+        </div>
+
+        <h3>引用来源</h3>
+        <div id="sources" class="source-list empty">暂无引用</div>
+
+        <div id="feedback" class="feedback hidden">
+          <button data-feedback="useful" type="button">有用</button>
+          <button data-feedback="bad" type="button">无用</button>
+        </div>
+      </section>
+    </main>
+
+    <section class="stats" id="stats"></section>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
